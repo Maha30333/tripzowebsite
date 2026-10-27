@@ -1,0 +1,43 @@
+/**
+* Admin manu css for wdesignkit Icon
+*/
+#adminmenu .toplevel_page_wdesign-kit .wp-menu-image.dashicons-before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#adminmenu .toplevel_page_wdesign-kit .wp-menu-image img {
+    max-width: 25px;
+    padding: 0;
+}
+
+#adminmenu .toplevel_page_wdesign-kit.current .wp-menu-image img {
+    opacity: 1;
+}
+
+/**
+* Default WDesignKit icon: render the single-path logo as a CSS mask tinted with
+* currentColor so the icon follows WordPress' own admin-menu colours (grey by
+* default, blue on hover/focus, white when active) across every admin colour
+* scheme. Scoped to the default icon via [src$="logo-icon.svg"] so white-label
+* custom logos keep rendering as their own image.
+*/
+#adminmenu .toplevel_page_wdesign-kit .wp-menu-image img[src$="logo-icon.svg"] {
+    display: none;
+}
+
+#adminmenu .toplevel_page_wdesign-kit .wp-menu-image:has(img[src$="logo-icon.svg"]) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#adminmenu .toplevel_page_wdesign-kit .wp-menu-image:has(img[src$="logo-icon.svg"])::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: currentColor;
+    -webkit-mask: url(https://maha30333.github.io/tripzowebsite/wp-content/plugins/wdesignkit/assets/images/svg/logo-icon.svg) no-repeat center / 25px 25px;
+    mask: url(https://maha30333.github.io/tripzowebsite/wp-content/plugins/wdesignkit/assets/images/svg/logo-icon.svg) no-repeat center / 25px 25px;
+}
